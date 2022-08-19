@@ -1,0 +1,73 @@
+@import "../../style/commons";
+
+.paginator {
+  max-width: 1200px;
+  align-self: center;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  background-color: inherit;
+  padding: 8px;
+
+  &__directions {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+
+    @media (max-width: 800px) {
+      visibility: hidden;
+    }
+  }
+
+  &__direction {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #282C33;
+    background-color: inherit;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #282C33;
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    position: relative;
+    border: 1px solid #282C33;
+    background-color: inherit;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #282C33;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    z-index: 10;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover{
+      cursor: initial;
+    }
+  }
+
+  &__nav {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+
+  }
+
+}

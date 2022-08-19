@@ -1,0 +1,12 @@
+.response{
+  width: 100%;
+  padding: 28px;
+  background-color: inherit;
+  color: lightgray;
+
+  &_error{
+    @extend .response;
+    background-color: darkred;
+  }
+}
+

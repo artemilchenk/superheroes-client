@@ -1,0 +1,27 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+.search {
+  align-self: center;
+  display: flex;
+  width: 50%;
+  padding: 12px 18px 12px 6px;
+  background-color: #282C33;
+  margin-top: 12px;
+}
+.search__field {
+  background-color: inherit;
+  margin-right: 8px;
+  width: 100%;
+  color: antiquewhite;
+}
+
+/*# sourceMappingURL=Search.module.css.map */

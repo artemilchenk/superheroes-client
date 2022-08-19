@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.module.scss';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HomePage} from "./pages/HomePage";
+import {ServerError} from "./components/ServerResponse/insdex";
+import {useAppSelector} from "./store";
+import styles from "./App.module.scss";
+import {HeroPage} from "./pages/HeroPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const heroError = useAppSelector(state => state.app.resErrGlobal)
+
+    return (
+        <div className={styles.app}>
+            {heroError && <ServerError message={heroError}/>}
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/hero/:id" element={<HeroPage/>}/>
+                    <Route index element={<HomePage/>}/>
+                </Routes>
+            </BrowserRouter>
+        </div>
+    )
 }
 
 export default App;
+

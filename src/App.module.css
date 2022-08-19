@@ -1,0 +1,12 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+/*# sourceMappingURL=App.module.css.map */

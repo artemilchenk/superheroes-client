@@ -1,0 +1,73 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+.heropage {
+  display: flex;
+  flex-direction: column;
+  background-color: #1E1E1E;
+  padding: 12px;
+  margin: 12px;
+}
+.heropage__photoname {
+  display: grid;
+  text-align: center;
+}
+.heropage__avatarwrapper {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 800px;
+  height: auto;
+}
+.heropage__imgwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  margin: 12px;
+  padding: 28px;
+  background-color: #282C33;
+}
+.heropage__imgwrapper:hover {
+  opacity: 0.7;
+}
+.heropage__heroinfo {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  background-color: #282C33;
+  padding: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.heropage__heroinfo_flexwrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.heropage__image {
+  background-color: rebeccapurple;
+  height: 200px;
+  width: 200px;
+  margin: 12px;
+}
+.heropage__err {
+  color: red;
+}
+
+/*# sourceMappingURL=HeroPage.module.css.map */

@@ -1,0 +1,76 @@
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box !important;
+}
+
+.paginator {
+  max-width: 1200px;
+  align-self: center;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  background-color: inherit;
+  padding: 8px;
+}
+.paginator__directions {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+@media (max-width: 800px) {
+  .paginator__directions {
+    visibility: hidden;
+  }
+}
+.paginator__direction {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #282C33;
+  background-color: inherit;
+}
+.paginator__direction:hover {
+  cursor: pointer;
+  background-color: #282C33;
+}
+.paginator__item {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px;
+  position: relative;
+  border: 1px solid #282C33;
+  background-color: inherit;
+}
+.paginator__item:hover {
+  cursor: pointer;
+  background-color: #282C33;
+}
+.paginator__dots {
+  position: absolute;
+  z-index: 10;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.paginator__dots:hover {
+  cursor: initial;
+}
+.paginator__nav {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+}
+
+/*# sourceMappingURL=Paginator.module.css.map */

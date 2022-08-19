@@ -1,0 +1,24 @@
+@import "../../style/commons";
+
+.form {
+  background-color: $secondary-color;
+  width: 400px;
+  height: max-content;
+  overflow-y: scroll;
+  align-self: center;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__err{
+    color: red;
+  }
+}

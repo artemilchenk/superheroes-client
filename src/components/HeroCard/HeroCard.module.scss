@@ -1,0 +1,39 @@
+@import "../../style/commons";
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  padding: 12px;
+  margin: 12px;
+
+  &__imgwrapper {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+  }
+
+  &__butt{
+    align-self: center;
+    width: 100px;
+  }
+
+  &__photoname{
+    display: grid;
+    text-align: center;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+

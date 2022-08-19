@@ -1,0 +1,11 @@
+.response, .response_error {
+  width: 100%;
+  padding: 28px;
+  background-color: inherit;
+  color: lightgray;
+}
+.response_error {
+  background-color: darkred;
+}
+
+/*# sourceMappingURL=HeroCard.module.css.map */
