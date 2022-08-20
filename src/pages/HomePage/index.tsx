@@ -8,26 +8,25 @@ import {CreateForm} from "../../components/Form/Create";
 import {SearchComponent} from "../../components/SearchBar";
 import {useLocation, useSearchParams} from "react-router-dom";
 import {PaginatorComponent} from "../../components/Paginator";
+import {Circles} from "react-loader-spinner";
 
 export const HomePage = () => {
     const [searchParams, setSearchParams] = useSearchParams({});
     const location = useLocation();
     const dispatch = useAppDispatch()
-    const {loading: heroLoading, data, error: heroError, getHeroes} = useGetHeroes('', '')
+    const {loading: heroesLoading, data, error: heroError, getHeroes} = useGetHeroes('', '')
 
     useEffect(() => {
         if (heroError) dispatch(setResErrGlobal(heroError))
-    }, [heroError])
-
-    useEffect(() => {
         getHeroes(location.search)
-    }, [searchParams])
+    }, [searchParams, heroError])
 
     return (
         <div className={styles.homepage}>
             <CreateForm callback={getHeroes} message={'Create Hero'}/>
             <SearchComponent/>
             <PaginatorComponent count={data?.count || 0}/>
+            {heroesLoading ? <Circles wrapperClass={styles.homepage__spiner} color="#00BFFF" height={80} width={80}/> : null}
             {data && data.heroes?.length ? (
                 <div>
                     {data.heroes.map(he => <HeroCard key={he._id} callback={getHeroes} hero={he}/>)}

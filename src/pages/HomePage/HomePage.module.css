@@ -2,5 +2,9 @@
   display: flex;
   flex-direction: column;
 }
+.homepage__spiner {
+  align-self: center;
+  justify-self: center;
+}
 
 /*# sourceMappingURL=HomePage.module.css.map */
