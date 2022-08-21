@@ -15,17 +15,16 @@ export const HeroPage = () => {
     const dispatch = useAppDispatch()
     const {data: hero, error: heroError, getHero} = useGetHero(id)
     const {error} = useUpdateHero()
-    const {loading: loadingUploadFile, data: file, error: errorUploadFile, uploadFIle} = useUploadFileHero()
+    const {loading: loadingUploadFile, data: file, error: errorUploadFile, setError:setUploadImageErr, uploadFIle} = useUploadFileHero()
+    const {deleteFIle, error: errorDeleteFile, setError: setDelImageErr} = useDeleteFileHero()
     const [fileImage, setFileImage] = useState<File | null>(null)
-    const heroErrorLocal = useAppSelector(state => state.app.resErrLocal)
-    const {deleteFIle} = useDeleteFileHero()
-    console.log(errorUploadFile)
 
     useEffect(() => {
         if (heroError) dispatch(setResErrGlobal(heroError))
         if (error) dispatch(setResErrGlobal(error))
         if (errorUploadFile) dispatch(setResErrLocal(errorUploadFile))
-    }, [heroError, error, errorUploadFile])
+        if (errorDeleteFile) dispatch(setResErrLocal(errorDeleteFile))
+    }, [heroError, error, errorUploadFile, errorDeleteFile])
 
     return (
         <div className={styles.heropage}>
@@ -36,21 +35,23 @@ export const HeroPage = () => {
                          alt=""/>}
             </div>
 
-
             <UpdateForm callback={getHero} hero={hero} message={''}/>
 
             <div className={styles.heropage__heroinfo}>
                 <div>Images: <input onChange={async (e) => {
                     if (e.target.files && e.target.files.length) {
                         setFileImage(e.target.files[0])
-                        dispatch(setResErrLocal(null))
+                        setUploadImageErr(null)
                     }
                 }} type="file"/></div>
             </div>
 
             {/*-------upload-input-------*/}
-            {heroErrorLocal ? <div
+            {errorUploadFile ? <div
                 style={{color: "red"}}>{`${errorUploadFile} ${!errorUploadFile?.includes('jpeg') ? 'bytes' : ''}`}</div> : null}
+
+            {errorDeleteFile ? <div
+                style={{color: "red"}}>{errorDeleteFile}</div> : null}
 
             {fileImage && <button onClick={async () => {
                 await uploadFIle(id || '', fileImage)

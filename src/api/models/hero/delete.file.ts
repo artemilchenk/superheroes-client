@@ -8,7 +8,6 @@ export function useDeleteFileHero() {
     const [error, setError] = useState<string | null>(null)
 
     async function deleteFIle(id:string | undefined, fileName: string) {
-        console.log(fileName)
         try {
             setError(null)
             setLoading(true)
@@ -26,5 +25,5 @@ export function useDeleteFileHero() {
         }
     }
 
-    return {loading, data, error, deleteFIle}
+    return {loading, data, error, setError, deleteFIle}
 }

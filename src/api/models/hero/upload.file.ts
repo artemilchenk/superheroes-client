@@ -29,5 +29,5 @@ export function useUploadFileHero() {
         }
     }
 
-    return {loading, data, error, uploadFIle}
+    return {loading, data, error, setError, uploadFIle}
 }
